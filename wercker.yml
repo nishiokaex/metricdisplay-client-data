@@ -1,0 +1,8 @@
+deploy:
+  box: node:latest
+  steps:
+  - script:
+    name: deploy
+    code: |-
+      npm install --global firebase-tools
+      firebase deploy --only hosting --token $FIREBASE_TOKEN
