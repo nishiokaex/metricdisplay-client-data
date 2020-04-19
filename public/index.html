@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Metric Display for Web">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="myapp">
+  <link rel="apple-touch-icon" href="/icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+  <title>Metric Display</title>
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <script>
+    /*
+      FetchEvent.respondWith received an error: TypeError: Credentials flag is true, but Access-Control-Allow-Credentials is not "true".
+      で動作しない
+      => iOSでPWAにすると、クロスドメインxhrができない様子
+    if ('serviceWorker' in navigator) {
+      if (window.location.hostname !== "localhost") {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/flutter_service_worker.js');
+        });
+      }
+    }
+    */
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-performance.js"></script>
+
+  <script>
+    if(typeof firebase !== 'undefined') {
+      if(window.matchMedia('(display-mode: fullscreen)').matches)　{
+        console.log("SKIP firebase");
+      } else {
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyCYkcTu0_FU_faanf8RJdVrlDEZ8eoKVtA",
+          authDomain: "smartblock.firebaseapp.com",
+          databaseURL: "https://smartblock.firebaseio.com",
+          projectId: "smartblock",
+          storageBucket: "smartblock.appspot.com",
+          messagingSenderId: "318955167969",
+          appId: "1:318955167969:web:86b880c47085cd281a17a0",
+          measurementId: "G-P49EV6WBSD"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        firebase.performance();
+      }
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>

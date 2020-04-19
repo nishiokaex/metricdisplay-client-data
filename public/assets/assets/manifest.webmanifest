@@ -1,0 +1,15 @@
+{
+  "name": "SmartDisplay",
+  "short_name": "SmartDisplay",
+  "display": "fullscreen",
+  "start_url": "/?utm_source=home&utm_medium=pwa",
+  "background_color": "transparent",
+  "theme_color": "#6859ea",
+  "icons": [
+    {
+      "src": "/assets/assets/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
