@@ -3,62 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Metric Display for Web">
+  <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="myapp">
-  <link rel="apple-touch-icon" href="/icons/Icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="metricdisplay">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
-  <title>Metric Display</title>
-  <link rel="manifest" href="/manifest.json">
+  <title>metricdisplay</title>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    /*
-      FetchEvent.respondWith received an error: TypeError: Credentials flag is true, but Access-Control-Allow-Credentials is not "true".
-      で動作しない
-      => iOSでPWAにすると、クロスドメインxhrができない様子
     if ('serviceWorker' in navigator) {
-      if (window.location.hostname !== "localhost") {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/flutter_service_worker.js');
-        });
-      }
-    }
-    */
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-performance.js"></script>
-
-  <script>
-    if(typeof firebase !== 'undefined') {
-      if(window.matchMedia('(display-mode: fullscreen)').matches)　{
-        console.log("SKIP firebase");
-      } else {
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyDj_4gFAdzq_JpWKPmCqlQL7kC8iY1h0P8",
-          authDomain: "metricdisplay.firebaseapp.com",
-          databaseURL: "https://metricdisplay.firebaseio.com",
-          projectId: "metricdisplay",
-          storageBucket: "metricdisplay.appspot.com",
-          messagingSenderId: "63413097538",
-          appId: "1:63413097538:web:7a62958d8defb4f96189db",
-          measurementId: "G-XVV2MJYE4Q"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        firebase.performance();
-      }
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
     }
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
