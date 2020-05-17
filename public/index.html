@@ -32,10 +32,9 @@
     }
     */
   </script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+  <script src="/__/firebase/init.js"></script>
 
   <script>
     if(typeof firebase !== 'undefined') {
@@ -43,19 +42,7 @@
         console.log("SKIP firebase");
       } else {
         // Your web app's Firebase configuration
-        var firebaseConfig = {
-          apiKey: "AIzaSyDj_4gFAdzq_JpWKPmCqlQL7kC8iY1h0P8",
-          authDomain: "metricdisplay.firebaseapp.com",
-          databaseURL: "https://metricdisplay.firebaseio.com",
-          projectId: "metricdisplay",
-          storageBucket: "metricdisplay.appspot.com",
-          messagingSenderId: "63413097538",
-          appId: "1:63413097538:web:7a62958d8defb4f96189db",
-          measurementId: "G-XVV2MJYE4Q"
-        };
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
       }
     }
   </script>
